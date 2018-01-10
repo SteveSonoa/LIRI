@@ -1,0 +1,25 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "LIRI takes commands and runs them. She's your personal assistant of entertainment!",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveSonoa/LIRI.git"
+  },
+  "author": "Steve Marshall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteveSonoa/LIRI/issues"
+  },
+  "homepage": "https://github.com/SteveSonoa/LIRI#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  }
+}
