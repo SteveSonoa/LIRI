@@ -875,3 +875,24 @@ puncOpenBrace, puncCloseBrace, puncPillar, puncOpenBracket, puncCloseBracket, pu
 puncSemiColon, puncQuotes, puncColon, puncApostrophe,
 puncComma, puncPeriod, puncBackSlash, puncLessThan, puncGreaterThan, puncQuestion, 
 spaceBar];
+
+module.exports = {
+  titleHeader: function(title) {
+    // Break the string into individual words
+    var titleWords = title.split(" ");
+    var finalLines = [];
+    var i = 0;
+    while (i < titleWords.length - 1) {
+      if(titleWords[i].length + titleWords[i+1].length + 1 <= 10) {
+        var combinedWords = titleWords[i] + " " + titleWords[i+1];
+        titleWords.splice(i, 2, combinedWords)
+      }
+      else {
+        i++;
+      }
+    }
+    for (var j = 0; j < titleWords.length; j++) {
+      console.log(titleWords[j]);
+    }
+  }
+};
