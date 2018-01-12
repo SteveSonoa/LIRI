@@ -1,3 +1,11 @@
+function noQuotes(input) {
+	var newInput = input[3];
+	for (var i = 4; i < input.length; i++) {
+		newInput = newInput + "+" + process.argv[i];
+	}
+	return newInput;
+}
+
 module.exports = {
 	twitter: function() {
 		// * This will show your last 20 tweets and when they were created at in your terminal/bash window.
@@ -7,11 +15,15 @@ module.exports = {
 
 		var client = new Twitter(keys.twitter);
 
+		// Create a default userName if one isn't passed
 		var userName = "RagGnomes";
+
+		// If a userName is passed, update it. We will not use noQuotes, because userNames are always 1 word.
 		if(process.argv[3]) {
 			userName = process.argv[3];
 		}
 
+		// Create the query with 20 results
 		var params = {screen_name: userName, count: 20};
 		client.get('statuses/user_timeline', params, function(error, tweets, response) {
 			if (!error) {
@@ -19,6 +31,7 @@ module.exports = {
 				console.log("");
 				tweets.forEach(function(t) {
 				    console.log(t.text);
+					// Add a space between each tweet to make it easier to read the results
 				    console.log("");
 				});
 			}
@@ -34,39 +47,28 @@ module.exports = {
 		var keys = require("../keys.js");
 
 		var spotify = new Spotify(keys.spotify);
-
+		// Create a default song to search for if none are passed
 		var songName = "The Sign";
+
+		// If the user passed a song name, update songName
 		if(process.argv[3]) {
-			songName = process.argv[3];
+			songName = noQuotes(process.argv);
+			console.log(songName);
 		}
 
 		spotify.search({ type: 'track', query: songName, limit: 1 }, function(err, data) {
 			if (err) {
-				return console.log('Error occurred: ' + err);
+				// Suppress the error code in leiu of something more fun.
+				return console.log("I'm sorry, Dave. I'm afraid I can't do that.");
 			}
 
+			// Returns the requested values for the song selected
 			console.log("Song Name: " + data.tracks.items[0].name);
 			console.log("Artist: " + data.tracks.items[0].artists[0].name);
 			console.log("Preview: " + data.tracks.items[0].preview_url);
 			console.log('From the album "' + data.tracks.items[0].album.name + '"');
 			
-			// data.forEach(function(s) {
-			// 	console.log(s.items);
-			// 	console.log("");
-			// });
 		});
-		// Argument is song name
-		//   * Artist(s)
-
-		// * The song's name
-
-		// * A preview link of the song from Spotify
-     
-		// * The album that the song is from
-
-		// If no song is provided then your program will default to "The Sign" by Ace of Base.
-
-		// You will utilize the [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package in order to retrieve song information from the Spotify API.
 	},
 	omdb: function() {
 		// Include the request npm package
@@ -76,15 +78,9 @@ module.exports = {
 		var movieName = "Mr+Nobody";
 
 		// If the user provided a movie, reset movieName
-		if(process.argv.length >= 3) {
-			movieName = process.argv[3];
-		}
-
-		// If the user provided multiple words, include a single string separated by "+" instead of spaces
-		if(process.argv.length > 4) {
-			for (var i = 4; i < process.argv.length; i++) {
-				movieName = movieName + "+" + process.argv[i];
-			}
+		if(process.argv[3]) {
+			movieName = noQuotes(process.argv);
+			console.log(movieName);
 		}
 
 		// Setup the query to the OMDB API
@@ -116,6 +112,7 @@ module.exports = {
 		});
 	},
 	footer: function () {
+		// Draw the LIRI logo for each query.
 		console.log ("                ___       ___       ___       ___   ");
 		console.log ("Thanks         /\\__\\     /\\  \\     /\\  \\     /\\  \\  ");
 		console.log (" for          /:/  /    _\\:\\  \\   /::\\  \\   _\\:\\  \\ ");
