@@ -1,9 +1,72 @@
 module.exports = {
 	twitter: function() {
+		// * This will show your last 20 tweets and when they were created at in your terminal/bash window.
+		var Twitter = require('twitter');
+		// Add code the code required to import the `keys.js` file and store it in a variable
+		var keys = require("../keys.js");
 
+		var client = new Twitter(keys.twitter);
+
+		var userName = "RagGnomes";
+		if(process.argv[3]) {
+			userName = process.argv[3];
+		}
+
+		var params = {screen_name: userName, count: 20};
+		client.get('statuses/user_timeline', params, function(error, tweets, response) {
+			if (!error) {
+				console.log("Here are the last 20 tweets from " + userName + ":");
+				console.log("");
+				tweets.forEach(function(t) {
+				    console.log(t.text);
+				    console.log("");
+				});
+			}
+			else {
+				console.log("I'm sorry; I couldn't complete that request.");
+			}
+		});
 	},
 	spotify: function() {
 
+		var Spotify = require('node-spotify-api');
+		// Add code the code required to import the `keys.js` file and store it in a variable
+		var keys = require("../keys.js");
+
+		var spotify = new Spotify(keys.spotify);
+
+		var songName = "The Sign";
+		if(process.argv[3]) {
+			songName = process.argv[3];
+		}
+
+		spotify.search({ type: 'track', query: songName, limit: 1 }, function(err, data) {
+			if (err) {
+				return console.log('Error occurred: ' + err);
+			}
+
+			console.log("Song Name: " + data.tracks.items[0].name);
+			console.log("Artist: " + data.tracks.items[0].artists[0].name);
+			console.log("Preview: " + data.tracks.items[0].preview_url);
+			console.log('From the album "' + data.tracks.items[0].album.name + '"');
+			
+			// data.forEach(function(s) {
+			// 	console.log(s.items);
+			// 	console.log("");
+			// });
+		});
+		// Argument is song name
+		//   * Artist(s)
+
+		// * The song's name
+
+		// * A preview link of the song from Spotify
+     
+		// * The album that the song is from
+
+		// If no song is provided then your program will default to "The Sign" by Ace of Base.
+
+		// You will utilize the [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package in order to retrieve song information from the Spotify API.
 	},
 	omdb: function() {
 		// Include the request npm package
