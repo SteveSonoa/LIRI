@@ -6,6 +6,8 @@ function noQuotes(input) {
 	return newInput;
 }
 
+var bigLetters = require('./bigLetters.js');
+
 module.exports = {
 	twitter: function() {
 		// * This will show your last 20 tweets and when they were created at in your terminal/bash window.
@@ -27,6 +29,7 @@ module.exports = {
 		var params = {screen_name: userName, count: 20};
 		client.get('statuses/user_timeline', params, function(error, tweets, response) {
 			if (!error) {
+				bigLetters.titleHeader(userName);
 				console.log("Here are the last 20 tweets from " + userName + ":");
 				console.log("");
 				tweets.forEach(function(t) {
@@ -63,6 +66,7 @@ module.exports = {
 			}
 
 			// Returns the requested values for the song selected
+			bigLetters.titleHeader(data.tracks.items[0].name);
 			console.log("Song Name: " + data.tracks.items[0].name);
 			console.log("Artist: " + data.tracks.items[0].artists[0].name);
 			console.log("Preview: " + data.tracks.items[0].preview_url);
@@ -93,6 +97,7 @@ module.exports = {
 					console.log("I'm sorry; I couldn't find that movie.");
 				}
 				else {			
+					bigLetters.titleHeader(JSON.parse(body).Title);
 					console.log(JSON.parse(body).Title);
 					console.log("Released in " + JSON.parse(body).Year);
 					// If there are no IMDB ratings, the app won't display it

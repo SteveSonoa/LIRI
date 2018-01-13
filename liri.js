@@ -4,6 +4,7 @@ require("dotenv").config();
 
 
 var functions = require('./assets/functions.js');
+var bigLetters = require('./assets/bigLetters.js');
 
 
 
