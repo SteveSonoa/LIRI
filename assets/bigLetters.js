@@ -891,8 +891,28 @@ module.exports = {
         i++;
       }
     }
+
+    var outputLine1 = "";
+    var outputLine2 = "";
+    var outputLine3 = "";
+    var outputLine4 = "";
+    var outputLine5 = "";
+    var outputLine6 = "";
+    var outputLine7 = "";
+
     for (var j = 0; j < titleWords.length; j++) {
-      console.log(titleWords[j]);
+      // Put each of the titleWords into its own string
+      var tempWord = [...titleWords[j]];
+      // Pull out each letter of the first string
+      // Change each character to the bubble versions based on ASCII value
+      // Update outputLine1 with the first letter's line1
+      // Update outputLine2 with the first letter's line2, etc. through outputLine7
+      // Update outputLine1 with the second letter's line1, etc. through outputLine7
+      // Print outputLine1, print outputLine2, etc. through outputLine7
+      // Print an empty space
+      // Empty outputLine1, outputLine2, etc. through outputLine7
+
+      // console.log(titleWords[j]);
     }
   }
 };
