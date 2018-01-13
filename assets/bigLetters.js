@@ -1,13 +1,13 @@
 var Letter = function(line1, line2, line3, line4, line5, line6, line7, asciiCode) {
-  line1,
-  line2,
-  line3,
-  line4,
-  line5,
-  line6,
-  line7,
-  asciiCode
-}
+  this.line1 = line1,
+  this.line2 = line2,
+  this.line3 = line3,
+  this.line4 = line4,
+  this.line5 = line5,
+  this.line6 = line6,
+  this.line7 = line7,
+  this.asciiCode = asciiCode
+};
 
 // Hilite a block, then Ctrl + shift + L to select the whole line
 
@@ -75,13 +75,13 @@ var bigU = new Letter
 "         ", 
 85);
 var bigI = new Letter
-(" _       ", 
-"| |      ", 
-"| |      ", 
-"| |      ", 
-"| |      ", 
-"|_|      ", 
-"         ", 
+(" _  ", 
+"| | ", 
+"| | ", 
+"| | ", 
+"| | ", 
+"|_| ", 
+"    ", 
 73);
 var bigO = new Letter
 (" _______ ", 
@@ -246,121 +246,121 @@ var bigM = new Letter
 "         ",
 77);
 var littleQ = new Letter
-("         ",
-"         ",
-"  ____   ",
-" / _  |  ",
-"| |_| |  ",
-" \\__  |  ",
-"    |_|  ",
+("        ",
+"        ",
+"  ____  ",
+" / _  | ",
+"| |_| | ",
+" \\__  | ",
+"    |_| ",
 113);
 var littleW = new Letter
-("         ",
-"         ",
-" _ _ _   ",
-"| | | |  ",
-"| | | |  ",
-" \\___/   ",
-"         ",
+("        ",
+"        ",
+" _ _ _  ",
+"| | | | ",
+"| | | | ",
+" \\___/  ",
+"        ",
 119);
 var littleE = new Letter
-("         ",
-"         ",
-" _____   ",
-"| ___ |  ",
-"| ____|  ",
-"|_____)  ",
-"         ",
+("        ",
+"        ",
+" _____  ",
+"| ___ | ",
+"| ____| ",
+"|_____) ",
+"        ",
 101);
 var littleR = new Letter
-("         ",
-"         ",
-"  ____   ",
-" / ___)  ",
-"| |      ",
-"|_|      ",
-"         ",
+("        ",
+"        ",
+"  ____  ",
+" / ___) ",
+"| |     ",
+"|_|     ",
+"        ",
 114);
 var littleT = new Letter
-("         ",
-"   _     ",
-" _| |_   ",
-"(_   _)  ",
-"  | |_   ",
-"   \\__)  ",
-"         ",
+("        ",
+"   _    ",
+" _| |_  ",
+"(_   _) ",
+"  | |_  ",
+"   \\__) ",
+"        ",
 116);
 var littleY = new Letter
-("         ",
-"         ",
-" _   _   ",
-"| | | |  ",
-"| |_| |  ",
-" \\__  |  ",
-"(____/   ",
+("        ",
+"        ",
+" _   _  ",
+"| | | | ",
+"| |_| | ",
+" \\__  | ",
+"(____/  ",
 121);
 var littleU = new Letter
-("         ",
-"         ",
-" _   _   ",
-"| | | |  ",
-"| |_| |  ",
-"|____/   ",
-"         ",
+("        ",
+"        ",
+" _   _  ",
+"| | | | ",
+"| |_| | ",
+"|____/  ",
+"        ",
 117);
 var littleI = new Letter
-(" _       ",
-"(_)      ",
-" _       ",
-"| |      ",
-"| |      ",
-"|_|      ",
-"         ",
+(" _  ",
+"(_) ",
+" _  ",
+"| | ",
+"| | ",
+"|_| ",
+"    ",
 105);
 var littleO = new Letter
-("         ",
-"         ",
-"  ___    ",
-" / _ \\   ",
-"| |_| |  ",
-" \\___/   ",
-"         ",
+("        ",
+"        ",
+"  ___   ",
+" / _ \\  ",
+"| |_| | ",
+" \\___/  ",
+"        ",
 111);
 var littleP = new Letter
-("         ",
-"         ",
-" ____    ",
-"|  _ \\   ",
-"| |_| |  ",
-"|  __/   ",
-"|_|      ",
+("        ",
+"        ",
+" ____   ",
+"|  _ \\  ",
+"| |_| | ",
+"|  __/  ",
+"|_|     ",
 112);
 var littleA = new Letter
-("         ",
-"         ",
-" _____   ",
-"(____ |  ",
-"/ ___ |  ",
-"\\_____|  ",
-"         ",
+("        ",
+"        ",
+" _____  ",
+"(____ | ",
+"/ ___ | ",
+"\\_____| ",
+"        ",
 97);
 var littleS = new Letter
-("         ",
-"         ",
-"  ___    ",
-" /___)   ",
-"|___ |   ",
-"(___/    ",
-"         ",
+("       ",
+"       ",
+"  ___  ",
+" /___) ",
+"|___ | ",
+"(___/  ",
+"       ",
 115);
 var littleD = new Letter
-("     _   ",
-"    | |  ",
-"  __| |  ",
-" / _  |  ",
-"( (_| |  ",
-" \\____|  ",
-"         ",
+("     _  ",
+"    | | ",
+"  __| | ",
+" / _  | ",
+"( (_| | ",
+" \\____| ",
+"        ",
 100);
 var littleF = new Letter
 ("    ___  ",
@@ -372,121 +372,121 @@ var littleF = new Letter
 "         ",
 102);
 var littleG = new Letter
-("         ",
-"         ",
-"  ____   ",
-" / _  |  ",
-"( (_| |  ",
-" \\___ |  ",
-"(_____|  ",
+("        ",
+"        ",
+"  ____  ",
+" / _  | ",
+"( (_| | ",
+" \\___ | ",
+"(_____| ",
 103);
 var littleH = new Letter
-(" _       ",
-"| |      ",
-"| |__    ",
-"|  _ \\   ",
-"| | | |  ",
-"|_| |_|  ",
-"         ",
+(" _      ",
+"| |     ",
+"| |__   ",
+"|  _ \\  ",
+"| | | | ",
+"|_| |_| ",
+"        ",
 104);
 var littleJ = new Letter
-("         ",
-"  (_)    ",
-"   _     ",
-"  | |    ",
-"  | |    ",
-" _| |    ",
-"(__/     ",
+("      ",
+"  (_) ",
+"   _  ",
+"  | | ",
+"  | | ",
+" _| | ",
+"(__/  ",
 106);
 var littleK = new Letter
-(" _       ",
-"| |      ",
-"| |  _   ",
-"| |_/ )  ",
-"|  _ (   ",
-"|_| \\_)  ",
-"         ",
+(" _      ",
+"| |     ",
+"| |  _  ",
+"| |_/ ) ",
+"|  _ (  ",
+"|_| \\_) ",
+"        ",
 107);
 var littleL= new Letter
-(" _       ",
-"| |      ",
-"| |      ",
-"| |      ",
-"| |      ",
-" \\_)     ",
-"         ",
+(" _   ",
+"| |  ",
+"| |  ",
+"| |  ",
+"| |  ",
+" \\_) ",
+"     ",
 108);
 var littleZ = new Letter
-("         ",
-"         ",
-" _____   ",
-"(___  )  ",
-" / __/   ",
-"(_____)  ",
-"         ",
+("        ",
+"        ",
+" _____  ",
+"(___  ) ",
+" / __/  ",
+"(_____) ",
+"        ",
 122);
 var littleX = new Letter
-("         ",
-"         ",
-" _   _   ",
-"( \\ / )  ",
-" ) X (   ",
-"(_/ \\_)  ",
-"         ",
+("        ",
+"        ",
+" _   _  ",
+"( \\ / ) ",
+" ) X (  ",
+"(_/ \\_) ",
+"        ",
 120);
 var littleC = new Letter
-("         ",
-"         ",
-"  ____   ",
-" / ___)  ",
-"( (___   ",
-" \\____)  ",
-"         ",
+("        ",
+"        ",
+"  ____  ",
+" / ___) ",
+"( (___  ",
+" \\____) ",
+"        ",
 99);
 var littleV = new Letter
-("         ",
-"         ",
-" _   _   ",
-"| | | |  ",
-" \\ V /   ",
-"  \\_/    ",
-"         ",
+("        ",
+"        ",
+" _   _  ",
+"| | | | ",
+" \\ V /  ",
+"  \\_/   ",
+"        ",
 118);
 var littleB = new Letter
-(" _       ",
-"| |      ",
-"| |__    ",
-"|  _ \\   ",
-"| |_) )  ",
-"|____/   ",
-"         ",
+(" _      ",
+"| |     ",
+"| |__   ",
+"|  _ \\  ",
+"| |_) ) ",
+"|____/  ",
+"        ",
 98);
 var littleN = new Letter
-("         ",
-"         ",
-" ____    ",
-"|  _ \\   ",
-"| | | |  ",
-"|_| |_|  ",
-"         ",
+("        ",
+"        ",
+" ____   ",
+"|  _ \\  ",
+"| | | | ",
+"|_| |_| ",
+"        ",
 110);
 var littleM = new Letter
-("         ",
-"         ",
-" ____    ",
-"|    \\   ",
-"| | | |  ",
-"|_|_|_|  ",
-"         ",
+("        ",
+"        ",
+" ____   ",
+"|    \\  ",
+"| | | | ",
+"|_|_|_| ",
+"        ",
 109);
 var puncSingleOpenQuote = new Letter
-(" _       ",
-"( )      ",
-" \\|      ",
-"         ",
-"         ",
-"         ",
-"         ",
+(" _  ",
+"( ) ",
+" \\| ",
+"    ",
+"    ",
+"    ",
+"    ",
 96);
 var puncTilde = new Letter
 ("  __  _  ",
@@ -498,13 +498,13 @@ var puncTilde = new Letter
 "         ",
 126);
 var puncExcl = new Letter
-(" _       ",
-"| |      ",
-"| |      ",
-"|_|      ",
-" _       ",
-"|_|      ",
-"         ",
+(" _  ",
+"| | ",
+"| | ",
+"|_| ",
+" _  ",
+"|_| ",
+"    ",
 33);
 var puncAt = new Letter
 ("  _____  ",
@@ -525,31 +525,31 @@ var puncPound = new Letter
 "         ",
 35);
 var puncDollar = new Letter
-("   _     ",
-" _| |_   ",
-"|  ___)  ",
-"|___  |  ",
-"(_   _|  ",
-"  |_|    ",
-"         ",
+("   _    ",
+" _| |_  ",
+"|  ___) ",
+"|___  | ",
+"(_   _| ",
+"  |_|   ",
+"        ",
 36);
 var puncPercent = new Letter
-(" _   _   ",
-"(_) | |  ",
-"   / /   ",
-"  / /    ",
-" / / _   ",
-"|_| (_)  ",
-"         ",
+(" _   _  ",
+"(_) | | ",
+"   / /  ",
+"  / /   ",
+" / / _  ",
+"|_| (_) ",
+"        ",
 37);
 var puncCarrot = new Letter
-("   __    ",
-"  /  \\   ",
-" (_/\\_)  ",
-"         ",
-"         ",
-"         ",
-"         ",
+("   __   ",
+"  /  \\  ",
+" (_/\\_) ",
+"        ",
+"        ",
+"        ",
+"        ",
 94);
 var puncAnd = new Letter
 ("  ___    ",
@@ -570,22 +570,22 @@ var puncStar = new Letter
 "         ",
 42);
 var puncOpenParen = new Letter
-("  _      ",
-" / )     ",
-"| |      ",
-"| |      ",
-"| |      ",
-" \\_)     ",
-"         ",
+("  _  ",
+" / ) ",
+"| |  ",
+"| |  ",
+"| |  ",
+" \\_) ",
+"     ",
 40);
 var puncCloseParen = new Letter
-(" _       ",
-"( \\      ",
-" | |     ",
-" | |     ",
-" | |     ",
-"(_/      ",
-"         ",
+(" _   ",
+"( \\  ",
+" | | ",
+" | | ",
+" | | ",
+"(_/  ",
+"     ",
 41);
 var puncUnderscore = new Letter
 ("         ",
@@ -597,13 +597,13 @@ var puncUnderscore = new Letter
 "         ",
 95);
 var puncPlus = new Letter
-("         ",
-"   _     ",
-" _| |_   ",
-"(_   _)  ",
-"  |_|    ",
-"         ",
-"         ",
+("        ",
+"   _    ",
+" _| |_  ",
+"(_   _) ",
+"  |_|   ",
+"        ",
+"        ",
 43);
 var num1 = new Letter
 ("  ___    ",
@@ -696,175 +696,175 @@ var num0 = new Letter
 "         ",
 48);
 var puncMinus = new Letter
-("         ",
-"         ",
-" _____   ",
-"(_____)  ",
-"         ",
-"         ",
-"         ",
+("        ",
+"        ",
+" _____  ",
+"(_____) ",
+"        ",
+"        ",
+"        ",
 45);
 var puncEquals = new Letter
-("         ",
-" _____   ",
-"(_____)  ",
-" _____   ",
-"(_____)  ",
-"         ",
-"         ",
+("        ",
+" _____  ",
+"(_____) ",
+" _____  ",
+"(_____) ",
+"        ",
+"        ",
 61);
 var puncOpenBracket = new Letter
-(" ___     ",
-"|  _)    ",
-"| |      ",
-"| |      ",
-"| |_     ",
-"|___)    ",
-"         ",
+(" ___  ",
+"|  _) ",
+"| |   ",
+"| |   ",
+"| |_  ",
+"|___) ",
+"      ",
 91);
 var puncCloseBracket = new Letter
-(" ___     ",
-"(_  |    ",
-"  | |    ",
-"  | |    ",
-" _| |    ",
-"(___|    ",
-"         ",
+(" ___  ",
+"(_  | ",
+"  | | ",
+"  | | ",
+" _| | ",
+"(___| ",
+"      ",
 93);
 var puncForwardSlash = new Letter
-(" _       ",
-"| |      ",
-" \\ \\     ",
-"  \\ \\    ",
-"   \\ \\   ",
-"    |_|  ",
-"         ",
+(" _      ",
+"| |     ",
+" \\ \\    ",
+"  \\ \\   ",
+"   \\ \\  ",
+"    |_| ",
+"        ",
 92);
 var puncOpenBrace = new Letter
-("   __    ",
-"  / _)   ",
-" | |     ",
-"( (      ",
-" | |_    ",
-"  \\__)   ",
-"         ",
+("   __  ",
+"  / _) ",
+" | |   ",
+"( (    ",
+" | |_  ",
+"  \\__) ",
+"       ",
 123);
 var puncCloseBrace = new Letter
-(" __      ",
-"(_ \\     ",
-"  | |    ",
-"   ) )   ",
-" _| |    ",
-"(__/     ",
-"         ",
+(" __    ",
+"(_ \\   ",
+"  | |  ",
+"   ) ) ",
+" _| |  ",
+"(__/   ",
+"       ",
 125);
 var puncPillar = new Letter
-(" _       ",
-"| |      ",
-"|_|      ",
-" _       ",
-"| |      ",
-"|_|      ",
-"         ",
+(" _  ",
+"| | ",
+"|_| ",
+" _  ",
+"| | ",
+"|_| ",
+"    ",
 124);
 var puncSemiColon = new Letter
-("         ",
-"         ",
-" _       ",
-"(_)      ",
-" _       ",
-"( )      ",
-"|/       ",
+("    ",
+"    ",
+" _  ",
+"(_) ",
+" _  ",
+"( ) ",
+"|/  ",
 59);
 var puncApostrophe = new Letter
-(" _       ",
-"( )      ",
-"|/       ",
-"         ",
-"         ",
-"         ",
-"         ",
+(" _  ",
+"( ) ",
+"|/  ",
+"    ",
+"    ",
+"    ",
+"    ",
 39);
 var puncColon = new Letter
-("         ",
-"         ",
-" _       ",
-"(_)      ",
-" _       ",
-"(_)      ",
-"         ",
+("    ",
+"    ",
+" _  ",
+"(_) ",
+" _  ",
+"(_) ",
+"    ",
 58);
 var puncQuotes = new Letter
-(" _  _    ",
-"( )( )   ",
-"|/  \\|   ",
-"         ",
-"         ",
-"         ",
-"         ",
+(" _  _  ",
+"( )( ) ",
+"|/  \\| ",
+"       ",
+"       ",
+"       ",
+"       ",
 34);
 var puncComma = new Letter
-("         ",
-"         ",
-"         ",
-"         ",
-" _       ",
-"( )      ",
-"|/       ",
+("    ",
+"    ",
+"    ",
+"    ",
+" _  ",
+"( ) ",
+"|/  ",
 44);
 var puncPeriod = new Letter
-("         ",
-"         ",
-"         ",
-"         ",
-" _       ",
-"(_)      ",
-"         ",
+("    ",
+"    ",
+"    ",
+"    ",
+" _  ",
+"(_) ",
+"    ",
 46);
 var puncBackSlash = new Letter
-("     _   ",
-"    | |  ",
-"   / /   ",
-"  / /    ",
-" / /     ",
-"|_|      ",
-"         ",
+("     _  ",
+"    | | ",
+"   / /  ",
+"  / /   ",
+" / /    ",
+"|_|     ",
+"        ",
 47);
 var puncLessThan = new Letter
-("         ",
-"  _      ",
-" / )     ",
-"( (      ",
-" \\_)     ",
-"         ",
-"         ",
+("     ",
+"  _  ",
+" / ) ",
+"( (  ",
+" \\_) ",
+"     ",
+"     ",
 60);
 var puncGreaterThan = new Letter
-("         ",
-" _       ",
-"( \\      ",
-" ) )     ",
-"(_/      ",
-"         ",
-"         ",
+("     ",
+" _   ",
+"( \\  ",
+" ) ) ",
+"(_/  ",
+"     ",
+"     ",
 62);
 var puncQuestion = new Letter
-("  ___    ",
-" / _ \\   ",
-"(_( ) )  ",
-"   (_/   ",
-"   _     ",
-"  (_)    ",
-"         ",
+("  ___   ",
+" / _ \\  ",
+"(_( ) ) ",
+"   (_/  ",
+"   _    ",
+"  (_)   ",
+"        ",
 63);
 var spaceBar = new Letter
-("         ",
-"         ",
-"         ",
-"         ",
-"         ",
-"         ",
-"         ",
+("      ",
+"      ",
+"      ",
+"      ",
+"      ",
+"      ",
+"      ",
 32);
 
 var characters = [bigQ, bigW, bigE, bigR, bigT, bigY, bigU, bigI, bigO, bigP, bigA, bigS, bigD, bigF, bigG, bigH, bigJ, bigK, bigL, bigZ, bigX, bigC, bigV, bigB, bigN, bigM, 
@@ -900,18 +900,56 @@ module.exports = {
     var outputLine6 = "";
     var outputLine7 = "";
 
+    // Put each of the titleWords into its own string
     for (var j = 0; j < titleWords.length; j++) {
-      // Put each of the titleWords into its own string
-      var tempWord = [...titleWords[j]];
       // Pull out each letter of the first string
+      var tempWord = [...titleWords[j]];
+      // console.log("tempWord: " + tempWord);
+      // console.log("j: " + j);
       // Change each character to the bubble versions based on ASCII value
-      // Update outputLine1 with the first letter's line1
-      // Update outputLine2 with the first letter's line2, etc. through outputLine7
-      // Update outputLine1 with the second letter's line1, etc. through outputLine7
-      // Print outputLine1, print outputLine2, etc. through outputLine7
-      // Print an empty space
-      // Empty outputLine1, outputLine2, etc. through outputLine7
+      for (var k = 0; k < tempWord.length; k++) {
+        var tempCode = tempWord[k].charCodeAt(0);
+        // console.log("tempWord[k]: " + tempWord[k]);
+        // console.log("tempWord[k].charCodeAt(0): " + tempWord[k].charCodeAt(0));
+        // console.log("tempCode: " + tempCode);
 
+        // Cycle through each of the letter characters defined above; find the asciiCode match
+        for (var l = 0; l < characters.length; l++) {
+          // console.log("characters[0]: " + JSON.stringify(characters[0]));
+          // console.log("tempCode: " + tempCode);
+          if(parseInt(characters[l].asciiCode) == parseInt(tempCode)) {
+            // Update outputLine1 with each matching letter's line1, etc.
+            outputLine1 = outputLine1 + characters[l].line1;
+            outputLine2 = outputLine2 + characters[l].line2;
+            outputLine3 = outputLine3 + characters[l].line3;
+            outputLine4 = outputLine4 + characters[l].line4;
+            outputLine5 = outputLine5 + characters[l].line5;
+            outputLine6 = outputLine6 + characters[l].line6;
+            outputLine7 = outputLine7 + characters[l].line7;
+            // console.log("character[l].line1: " + characters[l].line1);
+            // console.log("outputLine1: " + outputLine1);
+          }
+        }
+      }
+      // Print outputLine1, print outputLine2, etc. through outputLine7
+      console.log(outputLine1);
+      console.log(outputLine2);
+      console.log(outputLine3);
+      console.log(outputLine4);
+      console.log(outputLine5);
+      console.log(outputLine6);
+      console.log(outputLine7);
+      // Print an empty space
+      // console.log("");
+
+      // Empty outputLine1, outputLine2, etc. through outputLine7
+      outputLine1 = "";
+      outputLine2 = "";
+      outputLine3 = "";
+      outputLine4 = "";
+      outputLine5 = "";
+      outputLine6 = "";
+      outputLine7 = "";
       // console.log(titleWords[j]);
     }
   }
