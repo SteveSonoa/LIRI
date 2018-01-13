@@ -9,7 +9,7 @@ function noQuotes(input) {
 var bigLetters = require('./bigLetters.js');
 
 module.exports = {
-	twitter: function() {
+	twitter: function(myInput) {
 		// * This will show your last 20 tweets and when they were created at in your terminal/bash window.
 		var Twitter = require('twitter');
 		// Add code the code required to import the `keys.js` file and store it in a variable
@@ -21,8 +21,8 @@ module.exports = {
 		var userName = "RagGnomes";
 
 		// If a userName is passed, update it. We will not use noQuotes, because userNames are always 1 word.
-		if(process.argv[3]) {
-			userName = process.argv[3];
+		if(myInput != undefined) {
+			userName = myInput;
 		}
 
 		// Create the query with 20 results
@@ -43,7 +43,7 @@ module.exports = {
 			}
 		});
 	},
-	spotify: function() {
+	spotify: function(myInput) {
 
 		var Spotify = require('node-spotify-api');
 		// Add code the code required to import the `keys.js` file and store it in a variable
@@ -53,10 +53,14 @@ module.exports = {
 		// Create a default song to search for if none are passed
 		var songName = "The Sign";
 
+		if(myInput != undefined) {
+			songName = myInput;
+		}
+
 		// If the user passed a song name, update songName
 		if(process.argv[3]) {
 			songName = noQuotes(process.argv);
-			console.log(songName);
+			// console.log(songName);
 		}
 
 		spotify.search({ type: 'track', query: songName, limit: 1 }, function(err, data) {
@@ -69,22 +73,26 @@ module.exports = {
 			bigLetters.titleHeader(data.tracks.items[0].name);
 			console.log("Song Name: " + data.tracks.items[0].name);
 			console.log("Artist: " + data.tracks.items[0].artists[0].name);
-			console.log("Preview: " + data.tracks.items[0].preview_url);
+			if(data.tracks.items[0].preview_url !== null) { console.log("Preview: " + data.tracks.items[0].preview_url); }
 			console.log('From the album "' + data.tracks.items[0].album.name + '"');
 			
 		});
 	},
-	omdb: function() {
+	omdb: function(myInput) {
 		// Include the request npm package
 		var request = require("request");
 
 		// Create the variable movieName. If no movie is provided, the app will return info for Mr. Nobody.
 		var movieName = "Mr+Nobody";
 
+		if(myInput != undefined) {
+			movieName = myInput;
+		}
+
 		// If the user provided a movie, reset movieName
 		if(process.argv[3]) {
 			movieName = noQuotes(process.argv);
-			console.log(movieName);
+			// console.log(movieName);
 		}
 
 		// Setup the query to the OMDB API
@@ -127,7 +135,24 @@ module.exports = {
 		console.log ("               \\/__/     \\/__/     \\|__|     \\/__/     www.FullStackSteve.com");
 		console.log (" ");
 	},
-	createLog: function () {
-		// whatever
+	createLog: function (error) {
+		// Load the fs package to read and write
+		var fs = require("fs");
+
+		if(error !== undefined) {
+			fs.appendFile("log.txt", error, function(err) {
+				if (err) {
+					return console.log("ERROR: Unable to update log.txt. " + err);
+				}
+			});			
+		}
+		else {
+			// We will add the value to the bank file.
+			fs.appendFile("log.txt", process.argv, function(err) {
+				if (err) {
+					return console.log("ERROR: Unable to update log.txt. " + err);
+				}
+			});
+		}
 	}
 };
